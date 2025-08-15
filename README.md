@@ -1,40 +1,93 @@
-# Personal Portfolio Website Html Css Javascript
+# Personal Website (Portfolio)
 
-Upvesh is a  fully responsive personal, portfolio, resume template that consists of 5 colors, Light and Dark demos. It has many features of a business website. Upvesh is a simple, modern, creative and responsive template. It will help you to presents yourself or your business resume more smartly and easily. This is built with HTML5, CSS3, JAVASCRIPT. It’s 100% responsive with clean codes. All components used in the template are well commented, w3 validated and are well documented. 
+> A simple, responsive personal portfolio website built with plain HTML, CSS and JavaScript.
 
-## Previews
+This repository contains a multi-section portfolio template (home, about, services, portfolio, blog, contact) with a small style switcher, a lightbox for portfolio images and a preloader.
 
-| Home | About | Services
-| --- | --- | --- |
-| [![Home](https://github.com/DanielSPF/personal-website/blob/master/project-content/Section%20Screens/1-home.jpg)](https://github.com/DanielSPF/personal-website/blob/master/project-content/Section%20Screens/1-home.jpg) | [![About](https://github.com/DanielSPF/personal-website/blob/master/project-content/Section%20Screens/2-About.jpg)](https://github.com/https://github.com/DanielSPF/personal-website/blob/master/project-content/Section%20Screens/2-About.jpg) | [![Services](https://github.com/DanielSPF/personal-website/blob/master/project-content/Section%20Screens/3-Services.jpg)](https://github.com/DanielSPF/personal-website/blob/master/project-content/Section%20Screens/3-Services.jpg)
+## Features
 
-| Portfolio | Blog | Contact
-| --- | --- | --- |
-| [![Portfolio](https://github.com/DanielSPF/personal-website/blob/master/project-content/Section%20Screens/4-Portfolio.jpg)](https://github.com/DanielSPF/personal-website/blob/master/project-content/Section%20Screens/4-Portfolio.jpg) | [![Blog](https://github.com/DanielSPF/personal-website/blob/master/project-content/Section%20Screens/5-Blog.jpg)](https://github.com/DanielSPF/personal-website/blob/master/project-content/Section%20Screens/5-Blog.jpg) | [![Contact](https://github.com/DanielSPF/personal-website/blob/master/project-content/Section%20Screens/6-Contact.jpg)](https://github.com/DanielSPF/personal-website/blob/master/project-content/Section%20Screens/6-Contact.jpg)
+- Responsive layout (desktop and mobile)
+- Preloader animation
+- iTyped animated typing effect (used for intro)
+- Portfolio filter and lightbox viewer
+- Style switcher with a dark mode toggle and color skins
+- Simple, dependency-free frontend (no build step)
 
-## Demo
+## Tech / Files used
 
-- [Upvesh](https://danielspf.github.io/personal-website/)
+- HTML: `index.html`
+- CSS: `css/style.css`, `css/styleSwitcher.css`, `css/skins/pink.css`
+- JavaScript: `js/script.js`, `js/styleSwitcher.js`, `js/ityped.min.js`
+- Images: `images/` (used for about, blog, portfolio and project previews)
 
-## Tutorial
+## Project structure (important files)
 
-- [The WebShala](https://www.youtube.com/watch?v=ONqgNVWJ-Dw)
+```
+personal-website/
+  index.html                # Main entry
+  css/
+    style.css               # Main styles
+    styleSwitcher.css       # Styles for style-switcher (dark mode, toggler)
+    skins/
+      pink.css              # Example color skin
+  images/                   # Image assets (about, blog, portfolio...)
+  js/
+    ityped.min.js           # Typed text plugin
+    script.js               # Main site JS (preloader, nav, lightbox, filters)
+    styleSwitcher.js        # Dark mode / style switcher behavior
+```
 
-if you watch this full tutorial you will learn lot of things.
+## Run locally (Windows - cmd.exe)
 
-What has been learned :
-- Responsive Layout
-- 5 Color Skins
-- Light/Dark
-- Smoooth transitions
-- Live Style Switcher
-- Clean Code
-- W3C Validated
-- HTML5 & CSS3 & JAVASCRIPT
-- Cross Browser Compatible
-- 100% Customizable, all colors can be customized
-- Project Image Format
-- Font Awesome Icons
-- Well-commented code
-- Google Fonts
+No build tools are required. You can open `index.html` directly in a browser, or run a quick static server for proper routing and console output.
 
+Using Python 3 (if installed):
+
+```cmd
+cd path\to\personal-website
+python -m http.server 8000
+```
+
+Then open http://localhost:8000 in your browser.
+
+Using Node (npx http-server):
+
+```cmd
+cd path\to\personal-website
+npx http-server -p 8080
+```
+
+Or, simply double-click `index.html` to open it in your default browser.
+
+## Customization
+
+- Change the main accent color by editing or adding a CSS file in `css/skins/` and updating the `<link class="alternate-style" ...>` element in `index.html`.
+- Toggle dark mode: the script `js/styleSwitcher.js` adds/removes the `dark` class on `<body>` when an input with class `body-skin` changes. You can add a radio input for the dark skin (value="dark") in `index.html` or directly toggle `document.body.classList` from the console.
+- Edit content sections in `index.html` (each section has a `.section` and id: `home`, `about`, `services`, `portfolio`, `blog`, `contact`).
+
+## Developer notes
+
+- The project is vanilla HTML/CSS/JS and intentionally has no build process.
+- `js/script.js` controls the preloader, iTyped initialization, portfolio filtering, lightbox, and aside navigation. It is written to be readable and easy to extend.
+- `js/ityped.min.js` is a small third-party script used for the typing effect. Keep it in `js/` if you want the same animation.
+
+## Deploying
+
+You can publish this site to GitHub Pages by creating a repository and pushing this folder to the `master` or `main` branch, then enabling Pages in the repo settings (choose the root `/` as the source). Alternatively, static hosts like Netlify or Vercel will also work.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-change`
+3. Make changes and commit: `git commit -am "Add some feature"`
+4. Push and open a pull request
+
+Keep changes small and focused. For layout or behavior adjustments, prefer editing `css/style.css` and `js/script.js` respectively.
+
+## License
+
+This README recommends using the MIT license for simple permissive reuse. Add a `LICENSE` file if you want to apply it.
+
+---
+
+If you want, I can also add a simple `LICENSE` file (MIT), add a dark-mode radio in `index.html`, or create a small GitHub Actions workflow to deploy to GitHub Pages—tell me which and I'll implement it.
