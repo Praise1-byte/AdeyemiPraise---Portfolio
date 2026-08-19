@@ -92,4 +92,4 @@ This README recommends using the MIT license for simple permissive reuse. Add a 
 
 If you want, I can also add a simple `LICENSE` file (MIT), add a dark-mode radio in `index.html`, or create a small GitHub Actions workflow to deploy to GitHub Pages—tell me which and I'll implement it
 
-!
+!!
